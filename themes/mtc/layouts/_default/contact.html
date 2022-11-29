@@ -130,7 +130,11 @@
     </form>
   </div>
   <div class="bg-gray-100">
-    <div class="bg-mtcblue text-white p-4 flex items-center justify-between">
+    {{ $image := resources.Get "images/map.svg" }}
+    <div
+      class="bg-mtcblue text-white p-6 flex items-center justify-between"
+      style="background-image: url({{ $image.RelPermalink }}); height: 200px; background-position: center; "
+    >
       <span>Returgatan 1, 735 31 Surahammar, Sverige</span>
       <a
         target="_blank"
