@@ -1,0 +1,162 @@
+backend:
+  name: github
+  repo: mtcpsab/mtc-powder-solutions-website
+media_folder: "assets/uploads"
+public_folder: "/uploads"
+logo_url: /images/MTC-logo.svg
+collections:
+  - name: "articles" # Used in routes, e.g., /admin/collections/blog
+    label: "Articles" # Used in the UI
+    label_singular: "Article"
+    folder: "content/articles" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    filter: { field: "cms_hide" } # Hide all documents with field: cms_hide
+    fields: # The fields for each document, usually in front matter
+      - {
+          label: "Layout",
+          name: "layout",
+          widget: "hidden",
+          default: "article",
+        }
+      - { label: "Title", name: "title", widget: "string" }
+      - {
+          label: "Publish Date",
+          name: "date",
+          widget: "datetime",
+          date_format: "DD MMMM YYYY",
+        }
+      - label: "Categories"
+        label_singular: "Category"
+        name: "categories"
+        widget: "select"
+        multiple: true
+        options:
+          [
+            { label: "News", value: "news" },
+            { label: "Applications", value: "applications" },
+            { label: "Materials", value: "materials" },
+            { label: "Case studies", value: "case studies" },
+          ]
+      - { label: "Featured Image", name: "image", widget: "image" }
+      - { label: "Content", name: "body", widget: "markdown" }
+  # - name: "advantages" # Used in routes, e.g., /admin/collections/blog
+  #   label: "Advantages" # Used in the UI
+  #   label_singular: "Advantage"
+  #   folder: "content/advantages" # The path to the folder where the documents are stored
+  #   create: true # Allow users to create new documents in this collection
+  #   filter: { field: "cms_hide" } # Hide all documents with field: cms_hide
+  #   fields: # The fields for each document, usually in front matter
+  #     - {
+  #         label: "Layout",
+  #         name: "layout",
+  #         widget: "hidden",
+  #         default: "article",
+  #       }
+  #     - { label: "Title", name: "title", widget: "string" }
+  #     - { label: "Featured Image", name: "image", widget: "image" }
+  #     - { label: "Content", name: "body", widget: "markdown" }
+  - name: "team" # Used in routes, e.g., /admin/collections/blog
+    label: "Team" # Used in the UI
+    label_singular: "Team member"
+    folder: "content/team" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    identifier_field: name
+    editor:
+      preview: false
+    view_filters:
+      - label: "Global Contacts"
+        field: contact_type
+        pattern: "global"
+      - label: "Local Contacts"
+        field: contact_type
+        pattern: "local"
+    filter: { field: "cms_hide" } # Hide all documents with field: cms_hide
+    fields: # The fields for each document, usually in front matter
+      - { label: "Layout", name: "layout", widget: "hidden", default: "team" }
+      - { label: "Name", name: "name", widget: "string" }
+      - {
+          label: "Company",
+          name: "company",
+          widget: "string",
+          default: "MTC Powder Solutions AB",
+        }
+      - { label: "Role (or Area)", name: "role", widget: "string" }
+      - { label: "Email", name: "email", widget: "string", required: false }
+      - { label: "Phone", name: "phone", widget: "string", required: false }
+      - {
+          label: "Contact type",
+          name: "contact_type",
+          widget: "select",
+          options:
+            [
+              { label: "Global Contact", value: "global" },
+              { label: "Local Contact", value: "local" },
+            ],
+          default: "global",
+        }
+      - {
+          label: "Sorting weight",
+          name: "weight",
+          widget: "number",
+          default: 0,
+          required: false,
+        }
+  - name: "datasheets" # Used in routes, e.g., /admin/collections/blog
+    label: "Datasheets" # Used in the UI
+    label_singular: "Datasheet"
+    folder: "content/material-datasheets" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    editor:
+      preview: false
+    filter: { field: "cms_hide" } # Hide all documents with field: cms_hide
+    fields: # The fields for each document, usually in front matter
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Subtitle", name: "subtitle", widget: "string" }
+      - { label: "File", name: "file", widget: "file" }
+      - { label: "Description", name: "body", widget: "markdown" }
+  - name: "general" # Used in routes, e.g., /admin/collections/blog
+    label: "Settings" # Used in the UI
+    extension: "json"
+    description: "Settings for different parts of the website"
+    editor:
+      preview: false
+    files:
+      - label: Global
+        name: global-settings
+        description: "Global settings for the whole site"
+        file: "data/globalSettings.json"
+        fields:
+          - { label: Name, name: name, widget: string }
+          - { label: Phone, name: phone, widget: string }
+          - { label: Email, name: email, widget: string }
+          - label: Visiting Address
+            name: visiting_address
+            widget: object
+            fields:
+              - { label: "Street", name: "street", widget: "string" }
+              - { label: "City", name: "city", widget: "string" }
+              - { label: "Zip Code", name: "zip_code", widget: "string" }
+              - { label: "Country", name: "country", widget: "string" }
+          - label: "Socials"
+            name: "socials"
+            widget: "list"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Link", name: "link", widget: "string" }
+  - name: "pages" # Used in routes, e.g., /admin/collections/blog
+    label: "Pages" # Used in the UI
+    label_singular: "Page"
+    folder: "content/pages" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    filter: { field: "cms_hide" } # Hide all documents with field: cms_hide
+    editor:
+      preview: false
+    meta: { path: { widget: string, label: 'Path', index_file: 'index' } }
+    nested:
+      depth: 100 # max depth to show in the collection tree
+      summary: '{{title}}' # optional summary for a tree node, defaults to the inferred title field
+    fields: # The fields for each document, usually in front matter
+      - { label: "Layout", name: "layout", widget: "string", default: "page" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Featured Image", name: "image", widget: "image" }
+      - { label: "Content", name: "body", widget: "markdown" }

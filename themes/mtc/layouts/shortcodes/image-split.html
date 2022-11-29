@@ -1,0 +1,19 @@
+{{ $img := resources.GetMatch (.Get "imagesrc") }}
+{{ $imageCaption := (.Get "imagecaption" )}}
+{{ if gt $img.Width 704 }}
+{{ $img = $img.Resize "704x469" }}
+{{ end }}
+{{ $isReversed := (.Get "reverse") }}
+
+<div class="flex relative mb-16 justify-center items-start flex-col {{ if $isReversed }}lg:flex-row-reverse{{else}}lg:flex-row{{end}}">
+    <div class="content bg-white flex-1 p-8 lg:self-center lg:max-w-lg z-10 {{ if $isReversed }}lg:-ml-16{{else}}lg:-mr-16{{end}}">
+           {{ .Inner }}
+    </div>
+    <div class="flex-1 self-center">
+        <img 
+            loading="lazy"
+            class="w-full h-full object-fill"
+            src="{{ $img.RelPermalink }}"
+            alt="{{ $imageCaption }}">
+    </div>
+</div>

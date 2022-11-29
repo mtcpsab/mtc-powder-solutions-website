@@ -1,0 +1,24 @@
+{{ define "main" }}
+{{ partial "hero" . }}
+
+
+<section class="flex flex-col md:flex-row flex-wrap max-w-6xl mx-auto p-4 justify-center items-center lg:justify-start">
+    
+    {{ $paginator := .Paginate .Pages }}
+    {{ range $paginator.Pages }}
+    
+    <div class="flex justify-center items-center w-full max-w-lg p-4 lg:w-1/2">
+        <a href="{{ .RelPermalink }}" class="block text-center w-full hover:text-mtcblue shadow-xs hover:shadow-md h-full">
+
+            <h3 class="p-8 mt-2 text-lg font-bold capitalize">{{ .LinkTitle }}</h3>
+            
+        </a>
+    </div> 
+    
+    {{ end }}
+    <!-- Hugo's default pagination template. -->
+    <div class="w-full">
+        {{ template "_internal/pagination.html" . }}
+    </div>
+</section>
+{{ end }}

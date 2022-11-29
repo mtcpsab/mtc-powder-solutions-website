@@ -1,0 +1,17 @@
+{{ define "main" }}
+
+{{ partial "hero" . }}
+
+
+<section class="flex flex-col justify-center max-w-6xl mx-auto p-4 flex-wrap sm:flex-row sm:justify-start">
+    {{ $pages := where .Site.Pages "Params.categories" "intersect" .Page.Params.filter_categories }}
+    {{ $paginator := .Paginate $pages }}
+    {{ range $paginator.Pages }}
+        {{ partial "article-card" . }}
+    {{ end }}
+    <div class="w-full">
+        {{ template "_internal/pagination.html" . }}
+    </div>
+</section>
+
+{{ end }}

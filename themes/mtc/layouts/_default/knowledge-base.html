@@ -1,0 +1,27 @@
+{{ define "main" }}
+
+{{ partial "hero" . }}
+
+<section class="p-4 mx-auto">
+  {{ $pages := where .Site.Pages "Params.knowledge_base" true }}
+  <div class="flex max-w-2xl mx-auto flex-wrap flex-col sm:flex-row">
+    {{ range $pages }}
+      {{ if isset .Params "image" }}
+        {{ $img := resources.Get .Params.image}}
+        {{ if gt $img.Width 512 }}
+          {{ $img = $img.Resize "512x"}}
+        {{ end }}
+        <div class="bg-cover bg-center w-full max-w-lg mx-auto mb-4 lg:mb-0 lg:p-2 lg:w-1/2">
+            <div class="bg-cover bg-center w-full max-w-lg" style="background-image: url({{ $img.RelPermalink }})">
+                <div class="bg-mtcblue w-full h-full p-2 bg-opacity-75 hover:bg-opacity-100 text-white uppercase text-center py-16" style="background-color: rgba(14, 49, 120, 0.75);">
+                    <h3 class=" font-bold text-md">{{ truncate 30 .Params.title }}</h3>
+                    {{ partial "elements/button-link" (dict "text" "Read more" "url" .RelPermalink "class" "mt-4") }}
+                </div>
+            </div>
+        </div>
+      {{end}}
+    {{ end }}
+  </div>
+</section>
+
+{{ end }}

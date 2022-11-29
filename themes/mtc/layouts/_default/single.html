@@ -1,0 +1,15 @@
+{{ define "main" }}
+
+{{ partial "hero" . }}
+
+<section id="article" class="bg-white">
+
+    <div class="content max-w-3xl mx-auto p-8">
+        
+        {{ .Content }}
+
+    </div>
+
+</section>
+
+{{ end }}

@@ -1,0 +1,14 @@
+{{ $img := resources.GetMatch (.Params.image) }}
+{{ if gt $img.Width 512 }}
+{{ $img = $img.Resize "512x"}}
+{{ end }}
+<div class="bg-cover bg-center w-full max-w-lg mx-auto mb-4 lg:mb-0 lg:p-2 lg:w-1/3">
+    <a href="{{ .RelPermalink }}" aria-label="Read more about {{ .Params.title }}">
+    <div class="bg-cover bg-center w-full max-w-lg" style="background-image: url({{ with $img }}{{ $img.RelPermalink }}{{ end }})">
+        <div class="bg-mtcblue w-full h-full p-2 bg-opacity-75 hover:bg-opacity-100 text-white uppercase text-center py-16" style="background-color: rgba(14, 49, 120, 0.75);">
+            <h3 class="font-bold text-white text-md">{{ (truncate 30 .Params.title) }}</h3>
+            {{/*  {{ partial "elements/button-link" (dict "text" (truncate 30 .Params.title) "url" .RelPermalink "class" "mt-4" "arialabel" .Params.title) }}  */}}
+        </div>
+    </div>
+    </a>
+</div>

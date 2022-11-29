@@ -1,0 +1,18 @@
+<head>
+  <meta charset="utf-8" />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="32x32"
+    href="/images/favicon-32x32.png"
+  />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  {{ partial "style" . }} {{ $title := print .Site.Title " - " .Title }} {{ if
+  .IsHome }}{{ $title = .Site.Title }}{{ end }}
+  <title>{{ $title }}</title>
+  {{ $menu := resources.Get "js/menu.js" }}
+  <script defer src="{{ $menu.Permalink }}"></script>
+
+  {{- block "headend" . }}{{- end }}
+</head>

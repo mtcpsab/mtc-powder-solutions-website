@@ -1,0 +1,24 @@
+<div class="w-full flex md:w-1/2 lg:w-1/3 p-2">
+    <div class="bg-white p-8 flex-1 content">
+        <h3 class="text-lg font-bold">
+            {{ .name }}
+        </h3>
+        <p class="break-words">
+            {{ .role }} 
+            <br> 
+            {{ .company }}
+        </p>
+        {{ with .email }}
+        <p>
+            <b>Email:</b>
+            <br>
+            <span class="break-words">{{ safeHTML (replace . "@" "<br>@") }}</span>
+        </p>
+        {{ end }}
+        {{ with .phone }}
+        <p>
+            <span class="font-bold">Phone:</span> <br> {{ . }}
+        </p>
+        {{ end }}
+    </div>
+</div>

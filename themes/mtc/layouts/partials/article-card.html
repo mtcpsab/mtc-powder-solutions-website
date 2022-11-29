@@ -1,0 +1,25 @@
+<div class="p-4 sm:w-1/2 lg:w-1/3">
+    <div class="flex flex-col shadow-xs hover:shadow-md h-full">
+        <div class="bg-mtcblue">
+            <a href="{{ .RelPermalink }}" class="block text-gray-900 hover:text-mtcblue">
+            {{ if .Params.image }}
+                {{ partial "elements/image-thumb" (dict "src" .Params.image "alt" .Params.title "class" "w-full")}}
+            {{end}}
+            </a>
+        </div>
+
+        <div class="px-8 pt-4">
+            {{ range (.GetTerms "categories") }}
+                <a href="{{ .RelPermalink }}" class="inline-block capitalize text-xs bg-mtcblue text-white mr-1 mb-1 py-1 px-2">{{ .LinkTitle }}</a>
+            {{ end }}
+        </div>
+
+        <a href="{{ .RelPermalink }}" class="block text-gray-900 hover:text-mtcblue flex-1">
+            <h3 class="px-8 mt-2 text-lg font-bold">{{ .Title }}</h3>
+            <time class="block px-8 pb-4" datetime="2021-07-19">{{ .PublishDate.Format "2006-01-02" }}</time>
+            <div class="px-8 pb-8">
+                {{ truncate 100 .Summary }}
+            </div>
+        </a>
+    </div>
+</div>

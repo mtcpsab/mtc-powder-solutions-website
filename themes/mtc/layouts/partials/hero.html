@@ -1,0 +1,65 @@
+
+
+<section class="block w-full relative">
+    
+    {{ if (resources.GetMatch .Params.image) }}
+        {{ $img := (resources.GetMatch .Params.image) }}
+        {{ if gt $img.Width 1680}}
+        {{ $img = $img.Resize "1600x" }}
+        {{end}}
+        <div class="hero w-full block relative bg-center bg-cover bg-mtcblue"
+        style="background-image: url('{{ $img.RelPermalink }}');">
+        <div class="bg-mtcblue bg-opacity-75 flex flex-1 justify-center items-center py-12 lg:py-32"
+            style="background-color: rgba(14, 49, 120, 0.75);">
+            <div class="text-center text-gray-300 max-w-5xl px-6">
+    {{else}}
+    <div class="hero w-full block relative bg-center bg-cover bg-mtcblue">
+        <div class="bg-mtcblue bg-opacity-75 flex flex-1 justify-center items-center py-12 lg:py-32" style="background-color: rgba(14, 49, 120, 0.75);">
+            <div class="text-center text-gray-300 max-w-5xl px-6">
+    {{end}}
+    
+                <div>
+                    {{ range (.GetTerms "categories") }}
+                        <a href="{{ .RelPermalink }}"><span class="inline rounded-full text-xs bg-mtcblue text-white py-1 px-2">{{ .LinkTitle }}</span></a>
+                    {{ end }}
+                </div>
+                <h2 class="text-white p-0 text-3xl md:text-4xl lg:text-5xl uppercase font-bold text-shadow">
+                    {{ .Title }}
+                </h2>
+
+                <p data-fixture="" data-ce-tag="p" data-component="subheading::onSave"
+                    data-file="advantages/subheading.htm" data-tools="bold,italic">
+                    {{ .Params.subtitle }}
+                </p>
+
+                {{ if .PublishDate }}
+                    <div>
+                        <time class="text-shadow" datetime="2021-08-05">{{ .PublishDate.Format "2006-01-02" }}</time>
+                        <div class="py-8">
+                            <a href="#article" class="flex mx-auto justify-center items-center w-8 h-8 text-white rounded-full border-2">&darr;</a>
+                        </div>
+                    </div>
+                {{ end }}
+
+                {{ range .Params.buttons }}
+                    {{ partial "elements/button-link" (dict "url" .url "text" .text "class" "mt-4") }}
+                {{ end }}
+
+                <div class="mt-4">
+                {{ range .Params.filter_categories }}
+                    {{ $cat := $.Site.GetPage (printf "%s" (urlize .)) }}
+                    <a href="{{ $cat.RelPermalink }}">
+                        <span class="inline-block capitalize bg-mtcblue text-white mr-1 mb-1 py-2 px-4">{{ $cat.Title }}</span>
+                    </a>
+                {{ end }}
+                </div> 
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+</section>

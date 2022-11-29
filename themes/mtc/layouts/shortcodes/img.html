@@ -1,0 +1,8 @@
+{{ $img := resources.GetMatch (printf "*%s*" (.Get "src"))}}
+
+{{ if $img }}
+	{{ if gt $img.Width 768 }}
+	{{ $img = $img.Resize "768x"}}
+	{{ end }}
+	<img src="{{ $img.RelPermalink }}" height="{{$img.Height}}" width="{{$img.Width}}" {{ with .Get "class" }} class="{{ . }}"{{ end }} alt="{{ .Get `caption` }}">
+{{ end }}

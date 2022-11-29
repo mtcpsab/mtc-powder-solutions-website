@@ -1,0 +1,14 @@
+languageCode = "en-us"
+title = "MTC Powder Solutions"
+theme = "mtc"
+paginate = 12
+
+disableKinds = ['team']
+
+[permalinks]
+  categories = "/:slug/"
+  pages = ":sections[1:]/:slug/" # include every folder except the first one aka "pages"
+
+# Write stats to json (for purge CSS)
+[build]
+  writeStats = true

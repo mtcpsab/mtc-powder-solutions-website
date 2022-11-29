@@ -1,0 +1,43 @@
+{
+    "slides": [
+        {
+            "id": 1,
+            "bg": "images/slide-1.jpeg",
+            "text": "Freedom in design meets product performance",
+            "primaryButton": {
+                "text": "Contact us",
+                "url": "/contact/"
+            },
+            "secondaryButton": {
+                "text": "Advantages",
+                "url": "/advantages/"
+            }
+        },
+        {
+            "id": 2,
+            "bg": "images/slide-2.jpeg",
+            "text": "Turn metal powder into productivity",
+            "primaryButton": {
+                "text": "Contact us",
+                "url": "/contact/"
+            },
+            "secondaryButton": {
+                "text": "Advantages",
+                "url": "/advantages/"
+            }
+        },
+        {
+            "id": 3,
+            "bg": "images/slide-3.jpeg",
+            "text": "Product reliability in every detail",
+            "primaryButton": {
+                "text": "Contact us",
+                "url": "/contact/"
+            },
+            "secondaryButton": {
+                "text": "Advantages",
+                "url": "/advantages/"
+            }
+        }
+    ]
+}

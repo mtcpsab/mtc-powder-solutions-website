@@ -1,0 +1,19 @@
+# Redirects from what the browser requests to what we serve
+/home              /
+/articles/glance-inside-the-world-leader-of-pm-nns-hip-design-team /articles/a-glance-inside-the-world-leader-of-pm-nns-hip-design-team
+/articles/glance-inside-world-leader-pm-nns-hip-design-team /articles/a-glance-inside-the-world-leader-of-pm-nns-hip-design-team
+
+# News to Articles
+/news/*  /articles/:splat
+
+# Advantages
+/excessive-welding-costs /advantages/excessive-welding-costs
+/intricate-designs /advantages/intricate-designs
+/lead-times /advantages/lead-times
+/non-destructive-examination-nde /advantages/non-destructive-examination-nde
+/product-reliability /advantages/product-reliability
+/wear-resistance /advantages/wear-resistance
+
+# Page Not Found - 404
+/* /404.html 404
+

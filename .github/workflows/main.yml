@@ -1,0 +1,15 @@
+name: Cron build
+
+on:
+  schedule:
+    - cron: "58 13 * * *"
+    #- cron: "0 6 * * *" # Every morning 6 AM
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger our build webhook on Netlify
+        run: curl -s -X POST "https://api.netlify.com/build_hooks/${TOKEN}"
+        env:
+          TOKEN: ${{ secrets.NETLIFY_CRON_BUILD_HOOK }}

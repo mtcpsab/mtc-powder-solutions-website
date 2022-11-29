@@ -1,0 +1,53 @@
+<footer id="footer" class="bg-gray-900 text-gray-100 py-16">
+    <div class="max-w-6xl my-0 mx-auto">
+        <div class="flex flex-wrap flex-col md:flex-row">
+
+            <div class="p-2 md:w-1/2 lg:w-1/4 flex">
+                <div class="footer-column p-2 lg:p-8 flex-1 border-gray-800 border-l-2">
+                    <h3>Menu</h3>
+                    <div class="flex flex-col text-xs pt-4">
+                        {{ range .Site.Menus.footer }}
+                            <a class="text-blue-300" href="{{ .URL }}">{{ .Name }}</a>
+                        {{ end }}
+                    </div>
+                </div>
+            </div>
+            <div class="p-2 md:w-1/2 lg:w-1/4 flex">
+                <div class="footer-column p-2 lg:p-8 flex-1 border-gray-800 border-l-2">
+                    <h3>Visiting address</h3>
+                    <div class="flex flex-col text-xs pt-4">
+                        <p>{{ $.Site.Data.globalSettings.name }}</p>
+                        <p>{{ $.Site.Data.globalSettings.visiting_address.street }}</p>
+                        <p>{{ $.Site.Data.globalSettings.visiting_address.zip_code }} {{ $.Site.Data.globalSettings.visiting_address.city }}</p>
+                        <p>{{ $.Site.Data.globalSettings.visiting_address.country }}</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-2 md:w-1/2 lg:flex-1 flex">
+                <div class="footer-column p-2 lg:p-8 flex-1 border-gray-800 border-l-2">
+                    <h3>Contact</h3>
+                    <div class="flex flex-col text-xs pt-4">
+                        <p><span class="text-bold">Phone:</span> {{ $.Site.Data.globalSettings.phone }}
+                            <br><span class="text-bold">Email:</span> <a
+                                class="text-blue-300"
+                                href="mailto:info@mtcpowdersolutions.com">{{ $.Site.Data.globalSettings.email }}</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-2 md:w-1/2 lg:w-1/5 flex">
+                <div class="footer-column p-2 lg:p-8 flex-1 border-gray-800 border-l-2">
+                    <h3>Follow us</h3>
+                    <div class="flex flex-col text-xs pt-4">
+                        {{ range $.Site.Data.globalSettings.socials }}
+                        <a class="text-blue-300" href="{{.link}}" target="_blank" rel="noopener">{{.name}}</a>
+                        {{ end }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p class="muted credit px-10 pt-4 text-center">© {{ now.Format "2006" }} MTC Powder Solutions AB.</p>
+    </div>
+</footer>

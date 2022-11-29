@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Panel - MTC Powder Solutions AB</title>
+  {{ $styles := resources.Get "css/styles.scss" | toCSS | postCSS (dict "config" "./assets/css/postcss.config.js") }}
+  {{ $styles := $styles | minify | fingerprint | resources.PostProcess }}
+</head>
+
+<body>
+  <!-- Include the script that builds the page and powers Netlify CMS -->
+  <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+  <script>
+      
+    CMS.registerPreviewStyle("{{ $styles.Permalink }}");
+    //
+    var ArticlesPreview = createClass({
+      render: function () {
+        var entry = this.props.entry;
+        var image = entry.getIn(['data', 'image']) || '';
+        var title = entry.getIn(['data', 'title']) || '';
+        var date = entry.getIn(['data', 'date']) || '';
+        var body = entry.getIn(['data', 'body']) || '';
+        var bg = this.props.getAsset(image) || '';
+        return h('div', {},
+        h('section', { class: "block w-full relative" },
+        h('div', { class: "hero w-full block relative bg-center bg-cover bg-mtcblue", style: { backgroundImage: "url('" + bg.toString() + "')"} },
+          h('div', { class: "bg-mtcblue bg-opacity-75 flex flex-1 justify-center items-center py-12 lg:py-32" },
+            h('div', { class: "text-center text-gray-300 max-w-5xl px-6" },
+              h('h2', { class: "text-white p-0 text-3xl md:text-4xl lg:text-5xl uppercase font-bold text-shadow" }, title.toString()),
+              h('div', {},
+                h('time', { class: "text-shadow" }, new Date(date).toLocaleDateString()),
+                h('div', { class: "py-8" },
+                  h('a', { class: "flex mx-auto justify-center items-center w-8 h-8 rounded-full border-2" }, "↓")
+                )
+              )
+            )
+          )
+        )
+      ),
+          h('section', { id: "article", class: "bg-white"}, 
+            h('div', {class: "content max-w-3xl mx-auto p-8"}, this.props.widgetFor('body'))
+          )
+        );
+      }
+    });
+
+    CMS.registerPreviewTemplate("articles", ArticlesPreview);
+  </script>
+</body>
+
+</html>

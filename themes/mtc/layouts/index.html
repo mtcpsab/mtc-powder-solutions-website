@@ -1,0 +1,40 @@
+{{ define "main" }}
+{{- partial "slider" . -}}
+{{- partial "advantages" (dict "context" . "items" 3) -}}
+<section class="bg-gray-100">
+        <div class="max-w-6xl py-8 lg:py-24 my-0 mx-auto">
+
+            <div class="flex relative mb-16 justify-center items-start flex-col lg:flex-row">
+                <div class="content bg-white flex-1 p-8 lg:self-center lg:max-w-lg z-10 lg:-mr-16">
+                    <h2 class="mt-0">What we do</h2>
+                    <p>MTC is a world-leading producer of near-net shape (NNS) products produced by hot isostatic
+                        pressing (HIP). The ability to manufacture HIP products with irregular shapes and complex
+                        geometry offers several advantages over castings, forgings and fabricated materials, both in
+                        terms of design flexibility and material properties. </p>
+                </div>
+                <div class="flex-1 self-center">
+                    {{ $img := resources.Get "uploads/what-we-do.jpg"}}
+                    {{ if gt $img.Width 704 }}
+                        {{ $img = $img.Resize "704x" }}
+                        {{ $img = $img | fingerprint }}
+                    {{ end }}
+
+                    <img class="w-full" width="{{$img.Width}}" height="{{$img.Height}}" src="{{ $img.RelPermalink }}" alt="What we do">
+                </div>
+            </div>
+        </div>
+</section>
+
+<section class="bg-white">
+        <div class="max-w-6xl py-8 lg:py-24 my-0 mx-auto">
+
+            {{ partial "elements/section-header" "News" }}
+
+            <div class="flex flex-col justify-center max-w-6xl mx-auto p-4 flex-wrap sm:flex-row sm:justify-start">
+                {{ range first 3 (.Site.Taxonomies.categories.news) }}
+                {{ partial "article-card" . }}
+                {{end}}
+            </div>
+        </div>
+</section>
+{{ end }}

@@ -1,0 +1,30 @@
+
+{{ $logo := resources.Get "images/MTC-logo.svg"}}
+
+<header>
+<nav class="flex items-center justify-between flex-wrap py-4 px-4 max-w-6xl mx-auto">
+    <div class="flex items-center flex-shrink-0 text-white mr-6">
+      <a class="inline-block w-32" aria-label="Back to home page" href="/">
+          <img style="max-height: 25px;" alt="MTC Powder Solutions AB Logo" width="128" height="22" class="" src="{{ $logo.RelPermalink }}">
+      </a>
+    </div>
+    <div class="block lg:hidden">
+      <button id="main-menu-button" class="flex items-center px-3 py-2">
+        <svg class="fill-current h-5 w-5" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+      </button>
+    </div>
+    <div id="main-menu" class="w-full hidden lg:visible block lg:flex lg:items-end lg:w-auto">
+        {{ range .Site.Menus.main.ByWeight }}
+           
+                {{ if ne .Identifier "contact" }}
+                    <a class="block lg:inline-block py-4 lg:px-4 lg:py-2 uppercase text-gray-700" href="{{ .URL }}">
+                {{ else }}
+                    <a class="block ml-4 button-primary" href="{{ .URL }}">
+                {{ end }}
+                        {{ $text := print .Name | safeHTML }}
+                        {{ $text }}
+                    </a>
+        {{ end }}
+    </div>
+  </nav>
+</header>

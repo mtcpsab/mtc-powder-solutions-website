@@ -1,0 +1,18 @@
+{
+  "front_limit": 3,
+  "name": "MTC Powder Solutions AB",
+  "phone": "+46 220 300 01",
+  "email": "info@mtcpowdersolutions.com",
+  "visiting_address": {
+    "street": "Returgatan 1",
+    "zip_code": "SE-735 31",
+    "city": "Surahammar",
+    "country": "SWEDEN"
+  },
+  "socials": [
+    {
+      "name": "LinkedIn",
+      "link": "https://www.linkedin.com/company/mtc-powder-solutions"
+    }
+  ]
+}

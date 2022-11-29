@@ -1,0 +1,3 @@
+{{ $img := resources.GetMatch (printf "*%s*" (.Get "src"))}}
+
+{{ $img.RelPermalink }}
