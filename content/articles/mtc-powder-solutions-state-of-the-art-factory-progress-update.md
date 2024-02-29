@@ -1341,6 +1341,4 @@ MTC Powder Solutions AB is a leading provider of innovative manufacturing soluti
 
 <!--EndFragment-->
 
-s
-
 <!--EndFragment-->
