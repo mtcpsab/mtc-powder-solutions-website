@@ -6,14 +6,14 @@ categories:
   - news
 image: /uploads/mtc-eriksborg-.jpg
 ---
-<!--\\[if gte mso 9]><xml>
+<!--\\\\[if gte mso 9]><xml>
  <o:OfficeDocumentSettings>
   <o:RelyOnVML/>
   <o:AllowPNG/>
  </o:OfficeDocumentSettings>
-</xml><!\\[endif]-->
+</xml><!\\\\[endif]-->
 
-<!--\\[if gte mso 9]><xml>
+<!--\\\\[if gte mso 9]><xml>
  <w:WordDocument>
   <w:View>Normal</w:View>
   <w:Zoom>0</w:Zoom>
@@ -54,9 +54,9 @@ image: /uploads/mtc-eriksborg-.jpg
    <m:intLim m:val="subSup"/>
    <m:naryLim m:val="undOvr"/>
   </m:mathPr></w:WordDocument>
-</xml><!\\[endif]-->
+</xml><!\\\\[endif]-->
 
-<!--\\[if gte mso 9]><xml>
+<!--\\\\[if gte mso 9]><xml>
  <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="false"
   DefSemiHidden="false" DefQFormat="false" DefPriority="99"
   LatentStyleCount="376">
@@ -635,9 +635,9 @@ image: /uploads/mtc-eriksborg-.jpg
   <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
    Name="Smart Link"/>
  </w:LatentStyles>
-</xml><!\\[endif]-->
+</xml><!\\\\[endif]-->
 
-<!--\\[if gte mso 10]>
+<!--\\\\[if gte mso 10]>
 <style>
  /* Style Definitions */
  table.MsoNormalTable
@@ -659,7 +659,7 @@ image: /uploads/mtc-eriksborg-.jpg
 	mso-ansi-language:EN-US;
 	mso-fareast-language:EN-US;}
 </style>
-<!\\[endif]-->
+<!\\\\[endif]-->
 
 <!--StartFragment-->
 
@@ -672,5 +672,7 @@ Since its acquisition by MTC in 2020, MTC PS has been dedicated to driving innov
 *Stefan Grönhaug*, Project Manager at MTC PS for the Shin project, provided an update on the project's status recently, stating:
 
 > "The project is rapidly progressing according to schedule. The building structure is now over 50% completed, and the installation of five large overhead cranes is well underway. Additionally, all process equipment has been purchased and is undergoing manufacturing or already completed. This is a great achievement in itself and puts us firmly on target for our opening later this year. "
+
+![](/uploads/mtc-shin-1.png)
 
 <!--EndFragment-->
