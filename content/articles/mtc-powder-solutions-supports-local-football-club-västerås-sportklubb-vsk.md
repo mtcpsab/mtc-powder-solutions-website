@@ -1,6 +1,6 @@
 ---
 layout: article
-title: MTC Powder Solutions supports local football club Västerås Sportklubb (VSK)
+title: MTC Powder Solutions supports local football club VSK
 date: 2024-05-02T10:53:21.655Z
 categories:
   - news
