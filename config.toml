@@ -1,9 +1,9 @@
 languageCode = "en-us"
 title = "MTC Powder Solutions"
 theme = "mtc"
-paginate = 12
 
-disableKinds = ['team']
+[pagination]
+  pagerSize = 12
 
 [permalinks]
   categories = "/:slug/"
@@ -12,3 +12,13 @@ disableKinds = ['team']
 # Write stats to json (for purge CSS)
 [build]
   writeStats = true
+
+# External menu links
+[[menu.main]]
+  name = "HIP Services"
+  url = "https://hip.mtcpowdersolutions.com/"
+  weight = 99
+
+[[menu.footer]]
+  name = "HIP Services"
+  url = "https://hip.mtcpowdersolutions.com/"

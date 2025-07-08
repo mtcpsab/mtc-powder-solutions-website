@@ -3,3 +3,5 @@ node_modules
 /public/
 hugo_stats.json
 resources
+hugo-0.87.0
+.hugo_build.lock
