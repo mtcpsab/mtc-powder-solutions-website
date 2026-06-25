@@ -4,7 +4,7 @@ title: PM HIP – A Proven Manufacturing Technology Still Underutilized
 date: 2026-06-25T12:25:41.093Z
 categories:
   - news
-image: /uploads/mtchip.png
+image: /uploads/mtchip2.png
 ---
 <!--\[if gte mso 9]><xml>
  <o:OfficeDocumentSettings>
