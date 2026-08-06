@@ -1,6 +1,6 @@
 ---
 layout: team
-name: "Niklas "
+name: Niklas Viebke
 company: MTC Powder Solutions AB
 role: Sales Engineer
 email: niklas.viebke@mtcpowdersolutions.com
