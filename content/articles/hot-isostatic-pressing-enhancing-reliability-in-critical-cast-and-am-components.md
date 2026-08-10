@@ -683,7 +683,7 @@ As the use of advanced castings and additive manufacturing continues to grow, so
 
 <!--EndFragment-->
 
-![](/uploads/slide1.png)
+![](/uploads/slide1.png "Benefits of HIP ")
 
 <!--\\[if gte mso 9]><xml>
  <o:OfficeDocumentSettings>
@@ -2033,4 +2033,4 @@ With advanced HIP capability in Sweden, increased processing capacity, and decad
 
 <!--EndFragment-->
 
-![](/uploads/slide2.png)
+![](/uploads/slide2.png "MTC Powder Solutions ")
