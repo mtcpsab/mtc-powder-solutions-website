@@ -4,6 +4,7 @@ title: "PM HIP Billets: A Flexible Alternative to Conventional Forgings"
 date: 2026-09-02T11:59:23.877Z
 categories:
   - applications
+  - news
 image: /uploads/quintus-customer-story-pics-7-.jpg
 ---
 <!--\[if !mso]>
