@@ -7,10 +7,7 @@ categories:
   - news
 image: /uploads/manifold.jpg
 ---
-# \
-PM HIP: An Industrial Manufacturing Process, Not a Laboratory Experiment
-
-
+# PM HIP: An Industrial Manufacturing Process, Not a Laboratory Experiment
 
 For more than four decades, Powder Metallurgy Hot Isostatic Pressing (PM HIP) has produced demanding components for critical industries. Yet public discussion still often treats PM HIP as a technology with future industrial potential rather than an established manufacturing process operating today.
 
