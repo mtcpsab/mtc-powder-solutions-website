@@ -7,6 +7,11 @@ categories:
   - news
 image: /uploads/manifold.jpg
 ---
+# \
+PM HIP: An Industrial Manufacturing Process, Not a Laboratory Experiment
+
+
+
 For more than four decades, Powder Metallurgy Hot Isostatic Pressing (PM HIP) has produced demanding components for critical industries. Yet public discussion still often treats PM HIP as a technology with future industrial potential rather than an established manufacturing process operating today.
 
 As a manufacturer that has produced PM HIP components for more than 40 years, MTC Powder Solutions has participated in numerous workshops, conferences, and panel discussions focused on the industrialization of PM HIP. Surprisingly, one recurring observation stands out: ***many stakeholders still view PM HIP as a technology transitioning from laboratory development to industrial adoption***.
@@ -29,8 +34,6 @@ While these subjects support further optimisation, they represent only part of t
 This creates a perception gap: public discussion often frames PM HIP around research questions, while industrial manufacturers apply established methods to qualified customer components and serial production.
 
 Unlike technologies that remain largely within research environments, PM HIP has long since crossed the threshold into full-scale industrial production. The technology is not waiting for validation. It has been delivering validated solutions for decades.
-
-
 
 ## Why Does This Misconception Persist?
 
@@ -58,8 +61,6 @@ Manufacturers of PM HIP components possess decades of accumulated knowledge rega
 
 *"To understand a forged part, consult a forge shop. For a casting, consult a foundry. PM HIP should be treated the same way. HIP manufacturers hold decades of application knowledge that can accelerate development beyond a purely research-led approach."*\
 **– Jimmy Bovin, Chief Sales Officer, MTC Powder Solutions**
-
- 
 
 ![](/uploads/how-reduce-weight-valve-blocks-using-nns-hip-2.png "Forged design vs a HIPed design")
 
